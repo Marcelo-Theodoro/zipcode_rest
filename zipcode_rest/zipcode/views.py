@@ -10,6 +10,14 @@ class Zipcode(ViewSet):
 
     def list(self, request):
         queryset = Endereco.objects.all()
+        limit = request.GET.get('limit')
+        if limit:
+            try:
+                limit = int(limit)
+            except ValueError:
+                limit = False
+            else:
+                queryset = queryset[:limit]
         serializer = EnderecoSerializer(queryset, many=True)
         return Response(serializer.data)
 
