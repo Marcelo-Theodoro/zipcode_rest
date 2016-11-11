@@ -25,12 +25,13 @@ class Zipcode(ViewSet):
         }
         serializer = EnderecoSerializer(data=endereco)
         if serializer.is_valid():
-            s = serializer.save()
-            data = {'id': s.id}
+            endereco_novo = serializer.save()
+            serializer_novo_endereco = EnderecoSerializer(endereco_novo)
+            data = serializer_novo_endereco.data
             status = 201
         else:
             data = {'errors': serializer.errors}
-            status = 500
+            status = 400
         return Response(data=data, status=status)
 
     def retrieve(self, request, pk):
