@@ -90,5 +90,5 @@ ENV/
 
 
 # Django
-*/migrations/*
+*migrations/
 *.sqlite3
