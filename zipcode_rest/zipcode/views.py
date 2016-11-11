@@ -4,6 +4,7 @@ from rest_framework.response import Response
 from .serializers import EnderecoSerializer
 from .models import Endereco
 from .utils import busca_endereco
+from .utils import valida_sintaxe_cep
 
 
 class Zipcode(ViewSet):
@@ -23,7 +24,11 @@ class Zipcode(ViewSet):
 
     def create(self, request):
         cep = request.data['zip_code']
+        if not valida_sintaxe_cep(cep):
+            return Response(data={'errors': 'CEP inválido'}, status=400)
         endereco_completo = busca_endereco(cep)
+        if not endereco_completo:
+            return Response(data={'errors': 'CEP não encontrado'}, status=400)
         endereco = {
             'logradouro': endereco_completo.get('logradouro'),
             'bairro': endereco_completo.get('bairro'),
