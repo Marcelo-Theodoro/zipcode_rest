@@ -1,8 +1,11 @@
 from rest_framework import serializers
-from .models import Endereco
+from .models import ZipCode
 
 
-class EnderecoSerializer(serializers.ModelSerializer):
+class ZipCodeSerializer(serializers.ModelSerializer):
+    """Classe serialização dos dados recebidos na aplicação web
+    para objetos compatíveis com o model "ZipCode" e vice versa.
+    """
     class Meta:
-        model = Endereco
-        fields = ('logradouro', 'bairro', 'cidade', 'uf', 'cep')
+        model = ZipCode
+        fields = ('zip_code', 'address', 'neighborhood', 'city', 'state')

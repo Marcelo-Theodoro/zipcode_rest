@@ -32,12 +32,19 @@ UNIDADES_FEDERATIVAS = (
     )
 
 
-class Endereco(models.Model):
-    cep = models.CharField(max_length=8, primary_key=True)
-    logradouro = models.CharField(max_length=120)
-    bairro = models.CharField(max_length=60)
-    cidade = models.CharField(max_length=60)
-    uf = models.CharField(max_length=2, choices=UNIDADES_FEDERATIVAS)
+class ZipCode(models.Model):
+    """Classe que representa a tabela ZipCode no banco de dados.
+
+    O atributo "zip_code" é a chave primária(pk) da tabela.
+    O atributo "state" aceita como entrada apenas os itens
+    que estão na tupla "UNIDADES_FEDERATIVAS".
+    """
+    zip_code = models.CharField(max_length=8, primary_key=True)
+    address = models.CharField(max_length=120)
+    neighborhood = models.CharField(max_length=60)
+    city = models.CharField(max_length=60)
+    state = models.CharField(max_length=2, choices=UNIDADES_FEDERATIVAS)
 
     def __str__(self):
-        return self.cep
+        """Retorna uma string que representa o objeto"""
+        return self.zip_code
