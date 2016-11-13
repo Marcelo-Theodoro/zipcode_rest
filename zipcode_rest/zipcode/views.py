@@ -70,8 +70,8 @@ class Zipcode(ViewSet):
         # um dicionário com as chaves compatíveis com os models, e
         # pronto para ser validado.
         endereco = {
-            'address': endereco_completo.get('logradouro'),
-            'neighborhood': endereco_completo.get('bairro'),
+            'address': endereco_completo.get('logradouro', ''),
+            'neighborhood': endereco_completo.get('bairro', ''),
             'city': endereco_completo.get('cidade'),
             'state': endereco_completo.get('estado'),
             'zip_code': endereco_completo.get('cep'),
