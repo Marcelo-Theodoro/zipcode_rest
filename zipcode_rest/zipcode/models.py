@@ -7,8 +7,11 @@ class ZipCode(models.Model):
     O atributo "zip_code" é a chave primária(pk) da tabela.
     """
     zip_code = models.CharField(max_length=8, primary_key=True)
-    address = models.CharField(max_length=120)
-    neighborhood = models.CharField(max_length=60)
+    # Existem CEPs gerais que não tem informações sobre
+    # endereço e logradouro. Estes campos podem ser deixados
+    # em branco.
+    address = models.CharField(max_length=120, blank=True)
+    neighborhood = models.CharField(max_length=60, blank=True)
     city = models.CharField(max_length=60)
     state = models.CharField(max_length=2)
 
