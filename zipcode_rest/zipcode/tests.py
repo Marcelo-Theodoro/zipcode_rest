@@ -9,30 +9,30 @@ from .models import ZipCode
 from .views import Zipcode
 
 
-# class UtilsTestCase(TestCase):
-#
-#     def test_valida_sintaxe_cep_correta(self):
-#         sintaxes_corretas = [19914310, '19914310', '19914-310']
-#         for s in sintaxes_corretas:
-#             self.assertTrue(valida_sintaxe_cep(s))
-#
-#     def test_valida_sintaxe_cep_incorreta(self):
-#         sintaxes_incorretas = [199143101, 1991431, '19914d310', '199143100',
-#                                'teste']
-#         for s in sintaxes_incorretas:
-#             self.assertFalse(valida_sintaxe_cep(s))
-#
-#     def test_busca_endereco_cep_valido(self):
-#         cep_validos = [19914310, '19914310', '19914-310']
-#         for cep in cep_validos:
-#             sleep(1)
-#             self.assertEqual(busca_endereco(cep)['cep'], '19914310')
-#
-#     def test_busca_endereco_cep_invalido(self):
-#         cep_invalidos = [199143101, 1991431, '19914d310', '199143100']
-#         for cep in cep_invalidos:
-#             sleep(1)
-#             self.assertEqual(busca_endereco(cep), False)
+class UtilsTestCase(TestCase):
+
+    def test_valida_sintaxe_cep_correta(self):
+        sintaxes_corretas = [19914310, '19914310', '19914-310']
+        for s in sintaxes_corretas:
+            self.assertTrue(valida_sintaxe_cep(s))
+
+    def test_valida_sintaxe_cep_incorreta(self):
+        sintaxes_incorretas = [199143101, 1991431, '19914d310', '199143100',
+                               'teste']
+        for s in sintaxes_incorretas:
+            self.assertFalse(valida_sintaxe_cep(s))
+
+    def test_busca_endereco_cep_valido(self):
+        cep_validos = [19914310, '19914310', '19914-310']
+        for cep in cep_validos:
+            sleep(1)
+            self.assertEqual(busca_endereco(cep)['cep'], '19914310')
+
+    def test_busca_endereco_cep_invalido(self):
+        cep_invalidos = [199143101, 1991431, '19914d310', '199143100']
+        for cep in cep_invalidos:
+            sleep(1)
+            self.assertEqual(busca_endereco(cep), False)
 
 
 class ViewsTestCase(TestCase):
