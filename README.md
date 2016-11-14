@@ -1,10 +1,18 @@
 # zipcode_rest
 
+___________
+
+| Descrição  | Recurso | Método | URL Param | Data Params | HTTP Response em caso de sucesso | Exemplo | 
+| ------------- | ------------- |------------- |------------- |------------- |------------- |-------------|
+| Listar registros | /zipcode/ | GET |  Optional: `limit=[numeric]` | None | 200 | `curl http://127.0.0.1:8000/zipcode/limit=2`
+| Inserir registro | /zipcode/ | POST| None | `zip_code=[CEP]` | 201 | `curl --data "zip_code=14020260" http://localhost:8000/zipcode/`
+| Exibir detalhes  | /zipcode/[CEP]/ | GET | None | None | 200 | `curl http://localhost:8000/zipcode/14020260/`
+| Deletar registro  | /zipcode/[CEP]/ | DELETE | None | None | 204 | `curl -X DELETE http://localhost:8000/zipcode/14020260/`
 
 
 _____________
 
-## Como instalar
+## Instalação
 
 
 Sistema operacional: Compatível com sistema de pacotes Debian, como Ubuntu, Mint. Em outros sistema operacionais é necessário a alteração dos comandos baseados em `apt-get` para seu equivalente na distribuição, como o `dnf` no caso do Fedora, por exemplo.
