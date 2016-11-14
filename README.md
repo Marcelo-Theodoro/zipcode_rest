@@ -1,5 +1,18 @@
 # zipcode_rest
 
+REST app que permite a inserção, exclusão, listagem e detalhamento de CEPs.
+
+
+Aplicação desenvolvida utilizando:
+
+* [Python 3](https://www.python.org/)
+
+* [Django](https://github.com/django/django)
+
+* [Django Rest Framework](https://github.com/tomchristie/django-rest-framework)
+
+* [PostmonAPI](https://github.com/PostmonAPI/postmon)
+
 _____________
 
 ## Documentação dos recursos
