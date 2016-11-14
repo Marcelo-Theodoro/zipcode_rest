@@ -1,6 +1,8 @@
 # zipcode_rest
 
-___________
+_____________
+
+## Documentação dos recursos
 
 | Descrição  | Recurso | Método | URL Param | Data Params | HTTP Response em caso de sucesso | Exemplo | 
 | ------------- | ------------- |------------- |------------- |------------- |------------- |-------------|
@@ -9,6 +11,16 @@ ___________
 | Exibir detalhes  | /zipcode/[CEP]/ | GET | None | None | 200 | `curl http://localhost:8000/zipcode/14020260/`
 | Deletar registro  | /zipcode/[CEP]/ | DELETE | None | None | 204 | `curl -X DELETE http://localhost:8000/zipcode/14020260/`
 
+
+_____________
+
+## Cobertura dos testes
+
+| Name | Stmts | Miss | Cover |
+| ---- | ----- | ---- | ----- |
+| zipcode/utils.py | 12 | 0 | 100% |
+| zipcode/views.py | 46 | 0 | 100% |
+| serializers.py | 6 | 0 | 100% |
 
 _____________
 
