@@ -110,3 +110,18 @@ Os testes já estão integrados com a biblioteca [coverage](https://coverage.rea
 ```bash
 python manage.py runserver
 ```
+
+
+_____________
+
+## LOGS
+
+A aplicação está configurada armazenar logs de todas as ações no arquivo `zipcode.log` que se encontra na raiz da aplicação.
+
+O modelo dos logs segue: datetime - Level - Action 
+
+Exemplo:
+
+| datetime | Level | Action 
+| -------- | ----- | ---- |
+1479034455.157838 | INFO | "POST /zipcode/ HTTP/1.1" 201 132 |
